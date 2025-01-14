@@ -1,16 +1,19 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+const config = /** @type {Linter.Config} */ {
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: 'module',
+  },
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: ['next', 'plugin:prettier/recommended'],
+  plugins: ['prettier'],
+  rules: {
+    'prettier/prettier': 'error',
+    'react/react-in-jsx-scope': 'off',
+  },
+};
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-];
-
-export default eslintConfig;
+export default config;
