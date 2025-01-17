@@ -54,29 +54,3 @@ export async function signUpAction(data: {
     return { success: false, error: 'Failed to sign up' };
   }
 }
-
-export async function signInAction(data: { email: string; password: string }) {
-  const user = await prisma.user.findUnique({
-    where: {
-      email: data.email,
-    },
-    select: {
-      id: true,
-      name: true,
-      email: true,
-      password: true,
-    },
-  });
-
-  if (!user) {
-    return { success: false, error: 'User not found' };
-  }
-
-  const passwordMatch = await bcrypt.compare(data.password, user.password!);
-
-  if (!passwordMatch) {
-    return { success: false, error: 'Invalid password' };
-  }
-
-  return { success: true, data: user, message: 'User signed in successfully' };
-}

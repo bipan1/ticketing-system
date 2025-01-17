@@ -33,7 +33,7 @@ const SignUp = () => {
     setLoading(true);
 
     try {
-      const res = await signUpAction({
+      await signUpAction({
         name: data.name,
         email: data.email,
         password: data.password,

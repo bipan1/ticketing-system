@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { signIn } from 'next-auth/react';
 import { SignInFormInputs } from '@/types/Auth';
 import { FcGoogle } from 'react-icons/fc';
+import { useRouter } from 'next/navigation';
 
 const SignIn = () => {
   const {
@@ -13,14 +14,24 @@ const SignIn = () => {
     formState: { errors },
   } = useForm<SignInFormInputs>();
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const onSubmit = async (data: SignInFormInputs) => {
     setLoading(true);
-    await signIn('credentials', {
+    const res = await signIn('credentials', {
       email: data.email,
       password: data.password,
-      callbackUrl: '/',
+      redirect: false,
     });
+
+    if (res?.error) {
+      console.error(res.error);
+      alert('Failed to sign in');
+    } else {
+      router.push('/');
+    }
+
+    console.log(res);
     setLoading(false);
   };
 
