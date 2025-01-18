@@ -39,12 +39,12 @@ To get started with the project, follow these steps:
     GOOGLE_CLIENT_ID=""
     GOOGLE_CLIENT_SECRET=""
     NEXTAUTH_SECRET=""
-   ```bash
+   ```
 
 4. Run the Application:
    ```bash
    npm run dev
-   ```bash
+   ```
 
 ## Roadmap
 This project is in active development 🚀. Here are some of the upcoming features you can expect:
