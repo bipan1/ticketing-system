@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Events and Tickets
 
-## Getting Started
+Welcome to **Events and Tickets**! 🎉 This project aims to provide a seamless experience for creating events and managing ticket bookings.
 
-First, run the development server:
+## Overview
+This application leverages modern web technologies, including **Next.js, Kafka, and AWS services**, to deliver a robust and scalable solution for event management.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
+- **Event Creation**: Create and manage events with detailed information such as title, description, date, time, location, and more.
+- **Ticket Booking**: Users can easily book tickets for events, with real-time updates and notifications.
+- **User Authentication**: Secure user authentication and authorization mechanisms.
+- **Data Management**: Efficient data handling using Kafka for event streaming and AWS services for storage and processing.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technology Stack
+- **Frontend**: Next.js for server-side rendering and React for a dynamic user interface.
+- **Backend**: Kafka for event streaming, AWS services (e.g., Lambda, DynamoDB, S3) for scalable backend.
+- **Database**: Prisma ORM for database management and interactions.
+- **Authentication**: NextAuth.js for user authentication and session management.
+- **Styling**: Tailwind CSS for a responsive and modern design.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Installation
+To get started with the project, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/bipan1/ticketing-system.git
+   cd ticketing-system
+    ```
+   
+2. Intall Dependencies
+   ```bash
+   npm install
+   ```
+   
+3. Configure Environment Variables: Create a .env.local file in the project root and add the necessary environment variables:
+   ```bash
+    DATABASE_URL="your-database-url"
+    NEXTAUTH_URL="http://localhost:3000"
+    GOOGLE_CLIENT_ID=""
+    GOOGLE_CLIENT_SECRET=""
+    NEXTAUTH_SECRET=""
+   ```bash
 
-## Learn More
+4. Run the Application:
+   ```bash
+   npm run dev
+   ```bash
 
-To learn more about Next.js, take a look at the following resources:
+## Roadmap
+This project is in active development 🚀. Here are some of the upcoming features you can expect:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [ ] **User Profiles**: Users can create and customize their profiles.
+- [ ] **Event Search**: Advanced search functionality for finding events.
+- [ ] **Notifications**: Real-time notifications for event updates and ticket bookings.
+- [ ] **Payment Integration**: Secure payment processing for ticket bookings.
+- [ ] **Admin Dashboard**: A comprehensive dashboard for event organizers to manage events and bookings.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contributing
+   Contributions are welcome! Feel free to open an issue or submit a pull request with improvements or new features.
