@@ -25,7 +25,7 @@ export default function RootLayout({
   children,
   session,
 }: {
-  session: Session;
+  session: Session | null;
   children: React.ReactNode;
 }) {
   return (
