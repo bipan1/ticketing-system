@@ -25,7 +25,7 @@ const options: NextAuthOptions = {
           const user = await prisma.user.findUnique({
             where: { email: credentials.email },
             select: {
-              id: true,
+              id: true as const,
               email: true,
               password: true,
               name: true,
@@ -43,7 +43,7 @@ const options: NextAuthOptions = {
           );
 
           if (isPasswordValid) {
-            return exclude(user, ['password']);
+            return exclude({ ...user, id: user.id.toString() }, ['password']);
           } else {
             return null;
           }

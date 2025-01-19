@@ -6,8 +6,6 @@ import { MdEventAvailable } from 'react-icons/md';
 const Navbar = () => {
   const { data: session } = useSession();
 
-  console.log(session);
-
   return (
     <nav className="p-4 border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4 sm:px-16 lg:px-36 flex justify-between items-center">

@@ -4,7 +4,6 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SessionProviderWrapper from '@/lib/SessionProvider';
-import type { Session } from 'next-auth';
 import { ReactNode } from 'react';
 
 const geistSans = Geist({
@@ -24,16 +23,15 @@ export const metadata: Metadata = {
 
 interface LayoutProps {
   children: ReactNode;
-  session: Session | null;
 }
 
-export default function RootLayout({ children, session }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SessionProviderWrapper session={session}>
+        <SessionProviderWrapper>
           <div className="min-h-screen flex flex-col">
             <Navbar />
             <div className="flex-grow">{children}</div>
