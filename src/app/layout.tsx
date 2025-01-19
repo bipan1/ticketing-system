@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SessionProviderWrapper from '@/lib/SessionProvider';
 import type { Session } from 'next-auth';
+import { ReactNode } from 'react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -21,13 +22,12 @@ export const metadata: Metadata = {
   description: 'For all your event management needs and ticketing solutions',
 };
 
-export default function RootLayout({
-  children,
-  session,
-}: {
+interface LayoutProps {
+  children: ReactNode;
   session: Session | null;
-  children: React.ReactNode;
-}) {
+}
+
+export default function RootLayout({ children, session }: LayoutProps) {
   return (
     <html lang="en">
       <body
