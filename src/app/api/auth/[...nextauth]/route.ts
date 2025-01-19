@@ -33,8 +33,6 @@ const options: NextAuthOptions = {
             },
           });
 
-          console.log(user);
-
           if (!user) {
             return null;
           }
@@ -62,7 +60,7 @@ const options: NextAuthOptions = {
   session: { strategy: 'jwt', maxAge: 24 * 60 * 60 },
   adapter: PrismaAdapter(prisma),
   callbacks: {
-    async session({ session, token }: { session: any; token: any }) {
+    async session({ session, token }) {
       session.user.id = token.id;
       session.user.name = token.name;
       return session;

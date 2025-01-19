@@ -16,6 +16,6 @@ const config: Config = {
         kaushan: ['"Kaushan Script"', 'cursive'],
       },
     },
-  }
+  },
 };
 export default config;

@@ -3,6 +3,7 @@
 import { EventSubmitData } from '@/types/Event';
 import prisma from '../lib/Prisma';
 import bcrypt from 'bcryptjs';
+import { User } from '@/types/Auth';
 
 export async function createEvent(data: EventSubmitData) {
   try {
@@ -34,7 +35,7 @@ export async function signUpAction(data: {
   password: string;
 }): Promise<{
   success: boolean;
-  data?: any;
+  data?: User;
   error?: string;
   message?: string;
 }> {

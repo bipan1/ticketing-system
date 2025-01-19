@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SessionProviderWrapper from '@/lib/SessionProvider';
+import type { Session } from 'next-auth';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,7 +25,7 @@ export default function RootLayout({
   children,
   session,
 }: {
-  session: any;
+  session: Session;
   children: React.ReactNode;
 }) {
   return (
